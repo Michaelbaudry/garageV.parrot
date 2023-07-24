@@ -1,0 +1,530 @@
+$bleu: #03aef1;
+$blanc: white;
+$noir: black;
+$rouge: red;
+
+@mixin rounded($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Styles pour le header */
+.header {
+  position: relative;
+  height: 80px;
+  background-color: $blanc;
+  box-shadow: 0 2px 5px $noir;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Styles pour le menu */
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: $noir;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: $bleu;
+}
+
+/* Styles pour le logo */
+.logo {
+  width: 175px;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Styles pour les éléments de connexion-container */
+.connexion-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.user-info,
+.nav-links {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+/* Styles pour le bouton Connexion */
+
+.connexion {
+  background-color: $bleu;
+  color: $blanc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*Styles pour le menu burger en-dessous de 1360px */
+@media screen and (max-width: 1360px) {
+  .menu {
+    display: flex; /* Restore the menu for larger screens */
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+
+  .menu li {
+    margin-right: 20px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: $noir;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: $bleu;
+  }
+}
+
+/* Styles pour les éléments au-dessus de 1360px */
+@media screen and (min-width: 1361px) {
+  .menu {
+    display: flex; /* Restore the menu for larger screens */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu li {
+    margin-right: 20px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    color: $noir;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: $bleu;
+  }
+}
+
+//=================================================== MAIN =============================================================
+
+//================================================ SECTION 1 ===========================================================
+/* Styles for the image */
+.img-cover {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 20%;
+}
+
+h2 {
+  color: $bleu;
+  text-align: center;
+  margin-top: 70px;
+  padding-top: 70px;
+}
+.trait {
+  width: 500px;
+  height: 4px;
+  background-color: $noir;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  margin-top: 50px;
+  @include rounded(3px);
+}
+.texte {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  align-items: center;
+}
+
+.texte > p {
+    text-align: justify;
+    line-height: 1.6;
+    margin: 0 20px;
+}
+
+.texte > img {
+  margin: 20px;
+  width: 500px;
+  height: 400px;
+}
+
+.btn2 {
+  background: $bleu;
+  color: $blanc;
+  cursor: pointer;
+  @include rounded(3px);
+  padding: 5px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  font-size: larger;
+  &:hover {
+    background-color: darken($color: $bleu, $amount: 15);
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .texte {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texte > p {
+    margin: 20px;
+  }
+
+  .texte > img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+//======================================================== SECTION 2 ===================================================
+
+.bg-blk {
+  background: $noir;
+  color: $rouge;
+  margin-top: 100px;
+  height: 100%;
+  padding-bottom: 80px;
+}
+.container {
+  text-align: center;
+  padding-top: 10px;
+}
+.card {
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  background-color: $bleu;
+  width: 60%;
+  @include rounded(3px);
+  height: 100%;
+  padding: 5px 10px 15px 10px;
+  & img {
+    padding: 10px;
+    width: 90%;
+    height: 50%;
+  }
+}
+h3 {
+  color: $noir;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 1360px) {
+  .container {
+    display: flex;
+  }
+  .card {
+    width: 20%;
+    height: 100%;
+    & img {
+      height: 220px;
+      width: 90%;
+    }
+  }
+}
+
+//========================================================= SECTION  ===================================================
+.avis {
+  text-align: center;
+  margin-top: 70px;
+  & a {
+    text-decoration: underline;
+    color: $noir;
+  }
+  & p {
+    margin-top: 100px;
+  }
+//========================================================== FOOTER ====================================================
+}
+footer p {
+  padding-top: 50px;
+  text-align: center;
+}
+
+@media screen and (min-width: 1360px) {
+  .footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  footer img {
+    border: 1px solid $bleu;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  footer img {
+    display: none;
+  }
+}
+//============================================= PAGE VEHICULE OCCASION =================================================
+.btn3 {
+  background: $bleu;
+  color: $noir;
+  @include rounded(3px);
+  padding: 10px;
+  font-size: larger;
+  border: none;
+  &:hover {
+    background-color: darken($bleu, 15%);
+  }
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-container .btn3 {
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 1360px) {
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-container .btn3 {
+    margin: 10px 0;
+  }
+}
+.center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+}
+
+.contact-container p {
+  margin-bottom: 10px;
+}
+
+.contact-container a {
+  display: inline-block;
+}
+
+@media screen and (min-width: 1360px) {
+  .card-occasion {
+    height: 400px;
+  }
+}
+
+//===================================================== FORMULAIRE =====================================================
+.form-i {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  margin-bottom: 15px;
+  border: 2px solid $noir;
+  @include rounded(3px);
+}
+label {
+  color: $bleu;
+}
+//==================================================== FILTRE DE RECHERCHE =============================================
+.croquis-and-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.croquis-left,
+.croquis-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.filter {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 10px;
+  border: 1px solid $bleu;
+  border-radius: 5px;
+}
+
+.filter h2 {
+  color: $noir;
+  margin-top: -60px;
+  margin-bottom: 60px;
+}
+
+.filter-row {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#results {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid $blanc;
+  border-radius: 5px;
+}
+
+.btn-filter {
+  margin-bottom: 10px;
+  margin-top: 15px;
+  width: 30%;
+}
+
+#km,
+#classe,
+#annee,
+#prix {
+  border: 1px solid $bleu;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+//===================================================== PAGES AVIS =====================================================
+.form-group {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+#avis-form button {
+  margin-top: 20px;
+}
+textarea {
+  resize: none;
+  min-width: 300px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 400px;
+  margin-left: -26%;
+  margin-top: 10px;
+}
+
+//=============================================== TABLEAU DE CREATION UTILISATEURS =====================================
+.form-container,
+.employees-table {
+  flex: 1;
+  margin: 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.employees-table {
+  display:flex;
+  flex-direction: column;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 2px solid $bleu;
+}
+
+th,
+td {
+  border: 1px solid $bleu;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: $bleu;
+  color: $blanc;
+}
+
+tr:hover {
+  background-color: darken($bleu, 15%);
+}
+
+h3 {
+  text-align: center;
+}
